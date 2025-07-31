@@ -29,12 +29,3 @@ Route::post('/check-token', CheckTokenController::class);
 Route::post('/forget-password', [ForgetPasswordController::class, 'store']);
 Route::post('/check-code', [CheckCodeController::class, 'index']);
 Route::post('/reset-password', [ResetPasswordController::class, 'update']);
-Route::get('/test', function () {
-    return response()->json([
-        'message' => 'Laravel API is working!',
-        'status' => 'success',
-        'app_name' => config('app.name'),
-        'timestamp' => now(),
-        'database' => 'Connected to: ' . config('database.connections.mysql.database')
-    ]);
-});
