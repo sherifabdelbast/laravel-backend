@@ -29,3 +29,4 @@ Route::post('/check-token', CheckTokenController::class);
 Route::post('/forget-password', [ForgetPasswordController::class, 'store']);
 Route::post('/check-code', [CheckCodeController::class, 'index']);
 Route::post('/reset-password', [ResetPasswordController::class, 'update']);
+Route::get('/test',)
