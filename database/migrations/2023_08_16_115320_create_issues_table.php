@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->json('estimated_at')->default(json_encode([0,0,0]))->nullable();
+            $table->json('estimated_at')->nullable();
             $table->boolean('deleted')->nullable();
             $table->integer('order')->nullable();
             $table->integer('order_by_status')->nullable();
