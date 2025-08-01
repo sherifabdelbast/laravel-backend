@@ -46,7 +46,7 @@ class VerifyEmailNotification extends Notification
                 'expired_at' => now()->addMinutes(15)
             ]);
 
-        $url = 'https://www.taskat.approved.tech';
+        $url = 'https://taskat-app.netlify.app';
         $verificationUrl = "$url/complete-registration/?token={$token}";
         return (new MailMessage)
             ->line('Please click the button below to verify your email address.')
