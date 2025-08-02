@@ -27,7 +27,7 @@ class CompleteRegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'identify_number' => ['required', 'string'],
+            'identify_number' => [ 'string'],
             'name' => ['required', 'string', 'min:4', 'max:19', 'two_words'],
             'photo' => ['image', 'mimes:jpg,jpeg,png', 'max:5120'],
             'password' => ['required', 'string', 'min:9',
