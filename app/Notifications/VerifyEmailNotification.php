@@ -17,9 +17,9 @@ class VerifyEmailNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct(string $identifyNumber)
+    public function __construct(?string $identifyNumber)
     {
-        $this->identifyNumber = $identifyNumber;
+        $this->identifyNumber = $identifyNumber ?? Str::uuid()->toString();
     }
 
     /**
@@ -35,7 +35,6 @@ class VerifyEmailNotification extends Notification
     /**
      * Get the mail representation of the notification.
      */
-
     public function toMail(object $notifiable): MailMessage
     {
         $token = bcrypt(Str::random(10));
@@ -61,8 +60,6 @@ class VerifyEmailNotification extends Notification
      */
     public function toArray(object $notifiable): array
     {
-        return [
-            // If needed, you can add additional data to the notification array representation.
-        ];
+        return [];
     }
 }
